@@ -1,0 +1,19 @@
+Canvas
+HTML
+<canvas id="canvas"></canvas>
+
+Javascript
+var canvas=document.getElementById('canvas')
+var context =canvas.getContext('2d')
+//使用context进行绘制
+
+
+
+
+
+
+
+
+
+
+
