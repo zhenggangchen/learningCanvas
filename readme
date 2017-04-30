@@ -5,7 +5,7 @@ HTML
 Javascript
 var canvas=document.getElementById('canvas')
 var context =canvas.getContext('2d')
-//使用context进行绘制
+//浣跨敤context杩涜缁樺埗
 
 
 
