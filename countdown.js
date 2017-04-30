@@ -13,8 +13,12 @@ const colors = ["#33b5e5", "#0099cc", "#aa66cc", "#9933cc", "#99cc00", "#669900"
 
 
 //const endTime=new Date(2014,6,11,18,47,52);
-//const endTime=new Date(2014,6,11,18,47,52);
-const endTime = new Date("2017/5/1,12:45:45");
+
+//const endTime = new Date("2017/5/1,12:45:45");
+
+//设定为当前时间的一小时以后
+var endTime = new Date();
+endTime.setTime(endTime.getTime() + 3600 * 1000);
 
 var curShowTimeSeconds = 0;
 
@@ -95,8 +99,17 @@ function updateBalls() {
             balls[i].y = WINDOW_HEIGHT - RADIUS;
             balls[i].vy = -balls[i].vy * 0.75;
         }
-
     }
+    var cnt = 0;
+    for (var i = 0; i < balls.length; i++) {
+        if (balls[i].x + RADIUS > 0 && balls[i].x - RADIUS < WINDOW_WIDTH) {
+            balls[cnt++] = balls[i];
+        }
+    }
+    while (balls.length > cnt) {
+        balls.pop();
+    }
+
 }
 
 function addBalls(x, y, num) {
